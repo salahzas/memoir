@@ -86,20 +86,29 @@ Soit Un op\'erateur dans $ B(H)$ on noté :\\
 \noindent Dans toute la suite, $ H $ désigne un espace de Hilbert complexe et $B(H)$ l'algébre de Banach des opérateurs linéaires bornés sur $ H $.
 \section{Isométrie partielle}
 \begin{defn}
-Un opérateur $U \in B(H)$ est appelé isométrie partielle si  $$\Vert Ux \Vert =\Vert x\Vert , \forall x \in N(U)^\perp $$
+Un opérateur $U \in B(H)$ est appelé isométrie partielle si  : 
+\begin{center}
+$\Vert Ux \Vert =\Vert x\Vert$ \quad Pour tout $x \in \mathcal{N}(U)^\perp$
+\end{center}
 \end{defn}
 \begin{prop}
 Un opérateur $U\in B(H) $  est une isométrie partielle si et seulement si $U^*U  $ est une projection orthogonale.
 \end{prop}
 \begin{proof}
-Supposons que $U$ est une isométrie partielle. On a alors $(U^{*}U)^{*} = U^{*}U$ et $(UU^{*})^{*} = UU^{*}$.\\
-Il reste donc à prouver que $(U^{*}U)^{2} = U^{*}U$ et $(UU^{*})^{2} =UU^{*}$.\\
-Comme $H = N(U)^{\perp}\oplus N(U)$, on a pour tout $x \in H$
-$$U^{*}Ux = U^{*}Ux_{1} \in N(U)^{\perp} ,$$
-où $x_{1} \in N(U)^{\perp}$ vérifiant $x-x_1 \in N(U)$. \\ Il résulte de
+Supposons que $U$ est une isométrie partielle. On a alors 
+\begin{center}
+$(U^{*}U)^{*} = U^{*}U$ et $(UU^{*})^{*} = UU^{*}$.\\
+\end{center}
+Il reste donc à prouver que :
+\begin{center}
+ $(U^{*}U)^{2} = U^{*}U$ et $(UU^{*})^{2} =UU^{*}$.\\
+\end{center}
+Comme $H = \mathcal{N}(U)^{\perp}\oplus \mathcal{N}(U)$, on a pour tout $x \in H$
+$$U^{*}Ux = U^{*}Ux_{1} \in \mathcal{N}(U)^{\perp} ,$$
+où $x_{1} \in \mathcal{N}(U)^{\perp}$ vérifiant $x-x_1 \in \mathcal{N}(U)$. \\ Il résulte de
 $\Vert Ux_{1}\Vert = \Vert x_{1}\Vert$ que $\langle U^{*}Ux_1, x_1\rangle = \langle x_1, x_1\rangle ,$ par conséquence $U^{*}Ux_1 = x_1$. \\ On a donc $$(U^{*}U)^{2}x = U^{*}Ux.$$
 Montrons la réciproque. Comme $U^{*}U$ est une projection orthogonale, on a : $$\Vert U^{*}Ux\Vert^{2} = \langle U^{*}Ux,x\rangle = \Vert Ux\Vert^{2}.$$ 
-On en déduit alors que $ N(U^{*}U) = N(U)$ et donc $U^{*}U$ est une projection orthogonale sur $N(U)^{\perp}$. D'où, pour tout $x \in N(U)^{\perp}$
+On en déduit alors que $ \mathcal{N}(U^{*}U) = \mathcal{N}(U)$ et donc $U^{*}U$ est une projection orthogonale sur $\mathcal{N}(U)^{\perp}$. D'où, pour tout $x \in \mathcal{N}(U)^{\perp}$
 $$\Vert Ux\Vert^{2} = \langle U^{*}Ux,x\rangle = \Vert x\Vert^{2}.$$
 \end{proof}
 \begin{prop}
@@ -107,7 +116,7 @@ $ U\in B(H) $est une isométrie partielle si et seulement si $ U^{*} $ l'est aus
 \end{prop}
 \begin{proof}
 Il suffit de montrons que si $U$ est une isométrie partielle alors $UU^{*}$ est une projection orthogonale. En effet, pour tout $x \in H$ on a $ U^{*}x \in \overline{R(U^{*})} = N(U)^{\perp}$. En utilisant la
-Proposition 1.1.1 , on a donc :
+Proposition 2.1.1 , on a donc :
 $$(UU^{*})^{2}x = U(U^{*}U)U^{*}x = UU^{*}x .$$
 \end{proof}
 Le corollaire suivant découle immédiatement des deux propositions précédentes. 
@@ -122,23 +131,23 @@ Si $U\in B(H) $ est une isométrie partielle. Alors on a:
 
 \section{Décomposition polaire}
 \begin{thm} (Théorème de décomposition polaire )\\
-Soit $T \in B(H)$ ,il existe  unique isométrie partielle $U \in B(H)$ tel que : $$T = U \vert T \vert \quad et\quad N(U) = N(T ).$$
+Soit $T \in B(H)$ ,il existe  unique isométrie partielle $U \in B(H)$ tel que : $$T = U \vert T \vert \quad et\quad \mathcal{N}(U) = \mathcal{N}(T ).$$
 \end{thm}
 \begin{proof}
 On sait que :$ \Vert T x \Vert^2 =\Vert \vert T \vert x \Vert^2 ;\forall x \in H$
-Donc on déduire que : $$ N(\vert T\vert) = N(T ) ,$$ et que $$\vert T \vert x =\vert T \vert y \Rightarrow  T x = T y .$$
+Donc on déduire que : $$ \mathcal{N}(\vert T\vert) = \mathcal{N}(T ) ,$$ et que $$\vert T \vert x =\vert T \vert y \Rightarrow  T x = T y .$$
 On définit alors l’application : \begin{align*}
-V : R(\vert T\vert) &\rightarrow R(T) \\ \vert T\vert x &\mapsto Tx
+V : \mathcal{R}(\vert T\vert) &\rightarrow \mathcal{R}(T) \\ \vert T\vert x &\mapsto Tx
 \end{align*}
-$V$ est isométrique grâce à $\Vert T x\Vert^2= \Vert \vert T\vert  x\Vert^2 ;\forall x \in H$ .Elle s'entend donc par continuité à une isométrie de $\overline{R(\vert T\vert)}$ vers R(T ), qu'on note encore par $V$ .\\
-En posant $U = V P $ avec $P$ la projection orthogonale sur $N(T )^\perp$, obtient une isométrie partielle sur $H$ vérifiant la propriété énoncée .\\
+$V$ est isométrique grâce à $\Vert T x\Vert^2= \Vert \vert T\vert  x\Vert^2 ;\forall x \in H$ .Elle s'entend donc par continuité à une isométrie de $\overline{\mathcal{R}(\vert T\vert)}$ vers $\mathcal{R}(T )$, qu'on note encore par $V$ .\\
+En posant $U = V P $ avec $P$ la projection orthogonale sur $\mathcal{N}(T )^\perp$, obtient une isométrie partielle sur $H$ vérifiant la propriété énoncée .\\
 Unicité : Si $U_1$;$U_2$ sont deux isométries partielles vérifiant 
 $$U_1 \vert T \vert= U_2 \vert T \vert .$$
-Alors $U_1 = U_2$ sur $\overline{R(\vert T\vert)}$.\\
-De plus comme $\overline{R(\vert T\vert)}^\perp =N(T )$, la condition $N(U_1) = N(U_2) = N(T )$ implique que $ U_1 = U_2$ sur $H$.
+Alors $U_1 = U_2$ sur $\overline{\mathcal{R}(\vert T\vert)}$.\\
+De plus comme $\overline{\mathcal{R}(\vert T\vert)}^\perp =\mathcal{N}(T )$, la condition $\mathcal{N}(U_1) = \mathcal{N}(U_2) = \mathcal{N}(T )$ implique que $ U_1 = U_2$ sur $H$.
 \end{proof}
 \begin{prop}
-Comme conséquence directe de la proposition précédente, on a les identités suivantes :
+Soit $T \in \mathcal{B}(H)$ et soit $U$ sa decomposition polaire donc comme conséquence directe de la proposition précédente, on a les identités suivantes :
 \begin{enumerate}
 \item[(1)] $ T = U\vert T\vert = \vert T^{*}\vert U = UT^{*}U. $
 \item[(2)] $ \vert T\vert = U^{*}T = T^{*}U = U^{*} \vert T^{*}\vert U. $
@@ -149,16 +158,16 @@ Comme conséquence directe de la proposition précédente, on a les identités s
 
 \section{L'inverse de more penrose}
 \begin{defn}
-L'inverse de Moore-Penrose de $ A\in B(H) $ est l'op\'erateur $ A^{+}\in B(H)  $ v\'erifiant
+L'inverse de Moore-Penrose de $ T\in \mathcal{B}(H) $ est l'op\'erateur $ T^{+}\in \mathcal{B}(H)  $ v\'erifiant
 \begin{equation*}
 \left\lbrace\begin{array}{ll}
- AA^{+}A=A , \\
+ TT^{+}T=T , \\
  \\
- A^{+}AA^{+}=A^{+} ,\\
+ T^{+}TT^{+}=T^{+} ,\\
  \\
-(AA^{+})^{*}=AA^{+},\\
+(TT^{+})^{*}=TT^{+},\\
 \\
-(A^{+}A)^{*}A^{+}A.
+(T^{+}T)^{*}T^{+}T.
 \end{array}\right. 
 \end{equation*}
 
@@ -166,126 +175,126 @@ L'inverse de Moore-Penrose de $ A\in B(H) $ est l'op\'erateur $ A^{+}\in B(H)  $
 \begin{rem}
 \begin{enumerate}
 \item[$\bullet $] $ 0^{+}=0 $ et $ \lambda ^{+}=\frac{1}{\lambda} $, pour  $\lambda\neq 0 $. 
-\item[$\bullet $] Pour tout $ A \in B(H)$, $ (A^{+})^{+}=A $.
-\item[$\bullet $] Si $ A $ est inversible alors $ A^{+}=A^{-1} $.
-\item[$\bullet $] $ AA^{+} $ est une projection orthogonale sur $ R(A) $, de noyau $ N(A^{+}) $,
-\item[$\bullet $] $ A^{+}A $ une projection orthogonale sur $ R(A^{+}) $, de noyau $ N(A) $. 
+\item[$\bullet $] Pour tout $ T \in \mathcal{B}(H)$, $ (T^{+})^{+}=T $.
+\item[$\bullet $] Si $ T $ est inversible alors $ T^{+}=T^{-1} $.
+\item[$\bullet $] $ TT^{+} $ est une projection orthogonale sur $ \mathcal{R}(T) $, de noyau $ \mathcal{N}(T^{+}) $,
+\item[$\bullet $] $ T^{+}T $ une projection orthogonale sur $ \mathcal{R}(T^{+}) $, de noyau $ \mathcal{N}(T) $. 
 \end{enumerate}
 \end{rem}  
-\begin{thm} Soit $ A\in B(H)  $. alors les assertions suivantes sont \'equivalentes:
+\begin{thm} Soit $ T\in \mathcal{B}(H)  $. alors les assertions suivantes sont \'equivalentes:
 \begin{enumerate}
-\item[ \textnormal{(i)}] $ A $ poss\'ede un inverse g\'en\'eralis\'e,
-\item[\textnormal{(ii)}] $ R( A)$ est ferm\'e,
-\item[\textnormal{(iii)}] $ A^{+} $ existe et il est unique.
+\item[ \textnormal{(i)}] $ T $ poss\'ede un inverse g\'en\'eralis\'e,
+\item[\textnormal{(ii)}] $ \mathcal{R}( T)$ est ferm\'e,
+\item[\textnormal{(iii)}] $ T^{+} $ existe et il est unique.
 \end{enumerate}
  %Il existe un unique inverse de Moore-Penrose de $ A $ si et seulement si $ R(A) $ est ferm\'e. 
 \end{thm}
 \begin{proof}
-(i) $\Rightarrow$(ii). Supposons que $ B $ est un inverse g\'en\'eralis\'e de $ A $. D'apr\`es (1.1), $ AB $ est un idempotent  sur $ R(A) $. Donc $ R(A) $ est ferm\'e.\\
-(ii) $\Rightarrow $(iii). si $ R(A) $ est ferm\'e, alors d'apr\`es le Th\'eor\`eme 1.1.2, $ R(A^{*})$ est ferm\'e et par cons\'equent $H=R(A^{*})\oplus ^{\perp} N(A)=R(A)\oplus ^{\perp} N(A^{*}) $. Donc $ A $ est sous la forme:\\
+(i) $\Rightarrow$(ii). Supposons que $ S $ est un inverse g\'en\'eralis\'e de $ T $. D'apr\`es (1.1), $ TS $ est un idempotent  sur $ \mathcal{R}(T) $. Donc $ \mathcal{R}(T) $ est ferm\'e.\\
+(ii) $\Rightarrow $(iii). si $ \mathcal{R}(A) $ est ferm\'e, alors d'apr\`es le Th\'eor\`eme 1.1.2, $ \mathcal{R}(T^{*})$ est ferm\'e et par cons\'equent $H=\mathcal{R}(T^{*})\oplus ^{\perp} \mathcal{N}(T)=\mathcal{R}(T)\oplus ^{\perp} \mathcal{N}(T^{*}) $. Donc $ T $ est sous la forme:\\
 \begin{equation*}
-A=\begin{bmatrix} 
-A_{1} & 0 \\ 
+T=\begin{bmatrix} 
+T_{1} & 0 \\ 
 0 & 0%
-\end{bmatrix}:R(A^{*})\oplus ^{\perp} N(A)\rightarrow R(A)\oplus ^{\perp} N(A^{*}),  
+\end{bmatrix}:\mathcal{R}(T^{*})\oplus ^{\perp} \mathcal{N}(T)\rightarrow \mathcal{R}(T)\oplus ^{\perp} \mathcal{N}(T^{*}),  
 \end{equation*}
-o\`u $ A_{1} $ est un op\'erateur lin\'eaire born\'e inversible de $R(A^{*})$ dans $R(A)$.\\ 
+o\`u $ T_{1} $ est un op\'erateur lin\'eaire born\'e inversible de $\mathcal{R}(T^{*})$ dans $\mathcal{R}(T)$.\\ 
 Posons
 \begin{equation*}
- B=\begin{bmatrix} 
-A^{-1}_{1} & 0 \\ 
+ S=\begin{bmatrix} 
+T^{-1}_{1} & 0 \\ 
 0 & 0%
-\end{bmatrix}:R(A)\oplus ^{\perp} N(A^{*})\rightarrow R(A^{*})\oplus ^{\perp} N(A), 
+\end{bmatrix}:\mathcal{R}(T)\oplus ^{\perp} \mathcal{N}(T^{*})\rightarrow \mathcal{R}(T^{*})\oplus ^{\perp} \mathcal{N}(T), 
 \end{equation*}
 on a alors:
 \begin{displaymath} 
 \left\lbrace\begin{array}{ll}
- ABA=A ,\\ 
+ TST=S,\\ 
  \\
- BAB=B ,\\
- AB=(AB)^{*}=\begin{bmatrix} 
-I_{R(A)} & 0 \\ 
+ STS=T ,\\
+ TS=(TS)^{*}=\begin{bmatrix} 
+I_{\mathcal{R}(T)} & 0 \\ 
 0 & 0%
 \end{bmatrix},\\ 
 \\
- BA=(BA)^{*}=\begin{bmatrix} 
-I_{R(A^{*})} & 0 \\ 
+ ST=(ST)^{*}=\begin{bmatrix} 
+I_{\mathcal{R}(T^{*})} & 0 \\ 
 0 & 0%
 \end{bmatrix}
 \end{array}\right.  
 \end{displaymath} 
-Donc $ B $ est l'inverse de Moore-Penrose de $ A $.\\
+Donc $ S $ est l'inverse de Moore-Penrose de $ T $.\\
 
-\noindent Pour montrer l'unicit\'e, on suppose qu'il existe $ A^{+}_{1} $, $ A^{+}_{2} $ deux inverses de Moore-Penrose de $ A $. Donc $ AA_{1}^{+} $, $ AA_{2}^{+} $ sont deux projections orthogonales sur $ R(A) $ ce qui implique $AA_{1}^{+}=AA_{2}^{+}$. En multipliant cette Derni\`ere \'equation \`a gauche par $A_{1}^{+} $, et en utilisant la d\'efinition du Moore-Penrose inverse, on obtient $ A_{1}^{+}=A_{1}^{+}AA_{2}^{+}$ . Comme $A^{+}_{1}A $ et $ A^{+}_{2}A $ sont deux projections orthogonales sur $ N(A)^{\perp} $, alors $A^{+}_{1}A=A^{+}_{2}A  $. Donc $  A_{1}^{+}=A_{2}^{+}AA_{2}^{+}=A_{2}^{+}$.   \\
+\noindent Pour montrer l'unicit\'e, on suppose qu'il existe $ T^{+}_{1} $, $ T^{+}_{2} $ deux inverses de Moore-Penrose de $ T $. Donc $ TT_{1}^{+} $, $ TT_{2}^{+} $ sont deux projections orthogonales sur $ \mathcal{R}(A) $ ce qui implique $TT_{1}^{+}=TT_{2}^{+}$. En multipliant cette Derni\`ere \'equation \`a gauche par $T_{1}^{+} $, et en utilisant la d\'efinition du Moore-Penrose inverse, on obtient $ T_{1}^{+}=T_{1}^{+}TT_{2}^{+}$ . Comme $T^{+}_{1}T $ et $ T^{+}_{2}T $ sont deux projections orthogonales sur $ \mathcal{N}(T)^{\perp} $, alors $T^{+}_{1}T=T^{+}_{2}T $. Donc $  T_{1}^{+}=T_{2}^{+}TT_{2}^{+}=T_{2}^{+}$.   \\
 (iii) $\Rightarrow$ (ii). Evidente.\\
-D'apr\`es la d\'emonstration du Th\'eor\`eme pr\'ec\'edent, on conclut que si l'inverse de Moore-Penrose de $ A\in B(H)  $ existe alors:
+D'apr\`es la d\'emonstration du Th\'eor\`eme pr\'ec\'edent, on conclut que si l'inverse de Moore-Penrose de $ T\in \mathcal{B}(H)  $ existe alors:
 \begin{enumerate}
-\item[$\bullet $]$R(A^{+})=R(A^{+}A)=R(A^{*})$, 
-\item[$\bullet $] $  N(A^{+})=N(AA^{+})=N(A^{*})$,
-\item[$\bullet $] $ H=R(A)\oplus^{\perp} N(A^{+})=R(A^{+})\oplus ^{\perp} N(A).$
+\item[$\bullet $]$\mathcal{R}(T^{+})=\mathcal{R}(T^{+}T)=\mathcal{R}(T^{*})$, 
+\item[$\bullet $] $  \mathcal{N}(T^{+})=\mathcal{N}(TT^{+})=\mathcal{N}(T^{*})$,
+\item[$\bullet $] $ H=\mathcal{R}(T)\oplus^{\perp} \mathcal{N}(T^{+})=\mathcal{R}(T^{+})\oplus ^{\perp} \mathcal{N}(T).$
 \end{enumerate}
 \end{proof}
+
 \begin{prop}
-Soit $ A\in \mathfrak{L}(H)$. Si $ R(A) $ est ferm\'e, alors on a:
+Soit $T\in \mathfrak{B}(H)$ ,alors les assertions suivants sont equivalent:
 \begin{enumerate}
- \item[\textnormal{(i)}] $(A^{*})^{+}=(A^{+})^{*}$,
- \item[\textnormal{(ii)}] $ (A^{*}A)^{+}=A^{+}(A^{+})^{*}$,
- \item[\textnormal{(iii)}] $(AA^{*})^{+}=(A^{+})^{*}A^{+} $,
- \item[\textnormal{(iv)}] $ A^{*}=A^{+}AA^{*}=A^{*}AA^{+} $,
- \item[\textnormal{(v)}] $ A^{+}=(A^{*}A)^{+}A^{*}=A^{*}(AA^{*})^{+} $,
- \item[\textnormal{(vi)}] $ (A^{*})^{+}=A(A^{*}A)^{+}=(AA^{*})^{+}A $.
+\item[\textit{\textbf{(i)}}] $\mathcal{R}(T)$ fermé
+\item[\textit{\textbf{(ii)}}] $\mathcal{R}(T^*)$ fermé
+\item[\textit{\textbf{(iii)}}]$\mathcal{R}(T^*T)$ fermé
+\item[\textit{\textbf{(iv)}}]$\mathcal{R}(TT^*)$ fermé
+\end{enumerate}
+\end{prop}N
+\begin{prop}
+Soit $ T\in \mathfrak{B}(H)$. Si $ \mathcal{R}(A) $ est ferm\'e, alors on a:
+\begin{enumerate}
+ \item[\textnormal{(i)}] $(T^{*})^{+}=(T^{+})^{*}$,
+ \item[\textnormal{(ii)}] $ (T^{*}T)^{+}=T^{+}(T^{+})^{*}$,
+ \item[\textnormal{(iii)}] $(TT^{*})^{+}=(T^{+})^{*}T^{+} $,
+ \item[\textnormal{(iv)}] $ T^{*}=T^{+}TT^{*}=T^{*}TT^{+} $,
+ \item[\textnormal{(v)}] $ T^{+}=(T^{*}T)^{+}T^{*}=T^{*}(TT^{*})^{+} $,
+ \item[\textnormal{(vi)}] $ (T^{*})^{+}=T(T^{*}T)^{+}=(TT^{*})^{+}T $.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-(i). D'apr\`es la d\'efinition de $ A^{+} $, on obtient:\\
+(i). D'apr\`es la d\'efinition de $ T^{+} $, on obtient:\\
 
-\noindent $(A^{+})^{*}A^{*}(A^{+})^{*}=(A^{+}AA^{+})^{*}=(A^{+})^{*}$,\\
-$ A^{*}(A^{+})^{*}A^{*}=(AA^{+}A)^{*}=A^{*} $,\\
-$ (A^{*}(A^{+})^{*})^{*}=A^{+}A=(A^{+}A)^{*}=A^{*}(A^{+})^{*} $ et \\
-$ ((A^{+})^{*}A^{*})^{*}=AA^{+}=(AA^{+})^{*}=(A^{+})^{*}A^{*} $.\\ 
-Donc $ (A^{+})^{*} $ est le Moore-Penrose inverse de $ A^{*} $.\\
+\noindent $(T^{+})^{*}T^{*}(T^{+})^{*}=(T^{+}TT^{+})^{*}=(T^{+})^{*}$,\\
+$ T^{*}(T^{+})^{*}T^{*}=(TT^{+}T)^{*}=T^{*} $,\\
+$ (T^{*}(T^{+})^{*})^{*}=T^{+}T=(T^{+}T)^{*}=T^{*}(T^{+})^{*} $ et \\
+$ ((T^{+})^{*}T^{*})^{*}=TT^{+}=(TT^{+})^{*}=(T^{+})^{*}T^{*} $.\\ 
+Donc $ (T^{+})^{*} $ est le Moore-Penrose inverse de $ T^{*} $.\\
 
 \noindent (ii). Puisque on a :\\
 
-\noindent $ A^{*}AA^{+}(A^{+})^{*}A^{*}A=A^{*}AA^{+}(AA^{+})^{*}A=A^{*}AA^{+}AA^{+}A=A^{*}A $,\\
- $A^{+}(A^{+})^{*}A^{*}AA^{+}(A^{+})^{*}=A^{+}(AA^{+})^{*}AA^{+}(A^{+})^{*}=A^{+}AA^{+}(A^{+})^{*}=A^{+}(A^{+})^{*} $,\\
- $(A^{*}AA^{+}(A^{+})^{*})^{*}=A^{+}AA^{+}A=A^{+}A=(A^{+}A)^{*}=(AA^{+}A)^{*}(A^{+})^{*}=A^{*}AA^{+}(A^{+})^{*}  $\\
+\noindent $ T^{*}TT^{+}(T^{+})^{*}T^{*}T=T^{*}TT^{+}(TT^{+})^{*}T=T^{*}TT^{+}TT^{+}T=T^{*}T $,\\
+ $T^{+}(T^{+})^{*}T^{*}TT^{+}(T^{+})^{*}=T^{+}(TT^{+})^{*}TT^{+}(T^{+})^{*}=T^{+}TT^{+}(T^{+})^{*}=T^{+}(T^{+})^{*} $,\\
+ $(T^{*}TT^{+}(T^{+})^{*})^{*}=T^{+}TT^{+}T=T^{+}T=(T^{+}T)^{*}=(TT^{+}T)^{*}(T^{+})^{*}=T^{*}TT^{+}(T^{+})^{*}  $\\
  et
- $(A^{+}(A^{+})^{*}A^{*}A)^{*}=(A^{+}(A)A^{+}A )^{*}=A^{+}A=A^{+}(A^{+})^{*}A^{*}A $,\\
+ $(T^{+}(T^{+})^{*}T^{*}T)^{*}=(T^{+}(T)T^{+}T )^{*}=T^{+}T=T^{+}(T^{+})^{*}T^{*}T $,\\
  
-\noindent donc $ A^{+}(A^{+})^{*}  $ est le Moore-Penrose inverse de $ A^{*}A $.\\
+\noindent donc $ T^{+}(T^{+})^{*}  $ est le Moore-Penrose inverse de $ T^{*}T $.\\
  
-\noindent (iii) Se d\'eduit de $(ii)$, en rempla\c cant $ A $ par $ A^{+}$.\\
+\noindent (iii) Se d\'eduit de $(ii)$, en rempla\c cant $ T $ par $ T^{+}$.\\
  
-\noindent (iv). Comme $ A^{+}A $ est une projection sur $ R(A^{*}) $, alors on obtient 
+\noindent (iv). Comme $ T^{+}T $ est une projection sur $ \mathcal{R}(T^{*}) $, alors on obtient 
 \begin{center}
- $A^{*}= A^{+}AA^{*}=(A^{+}A)^{*}A^{*}=A^{*}(AA^{+})^{*}=A^{*}AA^{+}$.
+ $T^{*}= T^{+}TT^{*}=(T^{+}T)^{*}T^{*}=T^{*}(TT^{+})^{*}=T^{*}TT^{+}$.
 \end{center}
  
-\noindent (v). Il est bien claire que $ A^{+}=A^{+}(A^{+})^{*}A^{*} $. Par l'utilisation de (ii), on obtient la premi\`ere \'egalit\'e de (v). De la m\^{e}me m\'ethode, on peut trouver la deuxi\`eme \'egalit\'e de (v).\\
+\noindent (v). Il est bien claire que $ T^{+}=T^{+}(T^{+})^{*}T^{*} $. Par l'utilisation de (ii), on obtient la premi\`ere \'egalit\'e de (v). De la m\^{e}me m\'ethode, on peut trouver la deuxi\`eme \'egalit\'e de (v).\\
 
 \noindent (vi) Se d\'eduit de (v).
 \end{proof}
 \begin{thm}
-Soient  $A,B \in B(H)$ deux opérateurs  à image fermée .\\
-Supposions que $R(AB)$ est fermée, alors les propriété suivantes sont équivaillent :
+Soient  $T,S \in \mathfrak{B}(H)$ deux opérateurs  à image fermée .\\
+Supposions que $\mathcal{R}(TS)$ est fermée, alors les propriété suivantes sont équivaillent :
 \begin{enumerate}
-\item[1]$(AB)^{+}=B^{+}A^{+}$.
-\item[2] $R(A^{*}AB)\subset R(B)$ \quad et \quad $R(BB^{*}A^{*})\subset R(A^{*})$ .
+\item[1]$(TS)^{+}=S^{+}T^{+}$.
+\item[2] $\mathcal{R}(T^{*}TS)\subset \mathcal{R}(S)$ \quad et \quad $\mathcal{R}(SS^{*}T^{*})\subset \mathcal{R}(T^{*})$ .
 \end{enumerate}
 \end{thm}
 
-\begin{prop}
-Soit $T\in \mathcal{B}(H)$ ,alors les assertions suivants sont equivalent:
-\begin{enumerate}
-\item[\textit{\textbf{(i)}}] $\mathcal{R}(T)$ fermé
-\item[\textit{\textbf{(ii)}}] $\mathcal{R}(T^*)$ fermé
-\item[\textit{\textbf{(iii)}}]$T_0:=T|_{\mathcal{N}(T)^{\perp}}$ admet un inverse borné
-\item[\textit{\textbf{(iv)}}] $T^+$ est borné
-\item[\textit{\textbf{(v)}}] $\mathcal{R}(T^*T)$ fermé
-\item[\textit{\textbf{(v)}}] $\mathcal{R}(TT^*)$ fermé
-\end{enumerate}
-\end{prop}
+
 \newpage
 \section{L'espace quotient normé}
 Soit $E$ un ensemble et soit $F$ un sous-ensemble de $E$. On définit la relation suivant entre les éléments de E
@@ -324,6 +333,42 @@ pour cela :
 $||\bar{x}||= d(x,F) = \underset {f \in F}{\inf} ||x-f||$
 \end{center}
 Donc l'espace ($E/F$,||.||) est un espace quotient normé.
+\newpage
+
+\subsection{Factorisation d'un opérateur linéaire borné}
+ Soit $T \in \mathfrak{B}(H)$ alors on peut defnie les duex applications suivant : 
+ \begin{itemize}
+\item[I-] La surjection canonique :
+ \begin{center}
+ \begin{large}
+ $\begin{array}{ccc}
+ \pi : H & \longmapsto & H/\mathcal{N}(T)\\
+  x & \longrightarrow & \pi(x) = \bar{x}\\
+  & &
+ \end{array}$
+ \end{large}
+ \end{center}
+\item[II-]L'injection canonique :
+\begin{center}
+\begin{large}
+$\begin{array}{ccc}
+ \tilde{T} : H/\mathcal{N}(T)& \longmapsto & \mathcal{R}(T)\\
+  \bar{x} & \longrightarrow & \tilde{T}(\bar{x}) = Tx\\
+  & &
+ \end{array}$
+ \end{large}
+\end{center}
+\end{itemize}
+  Donc pour tout opérateur dans $\mathfrak{B}(H)$ on peut factoriser de la maniére suivant :
+  \begin{center}
+  \begin{large}
+  $\begin{array}{ccc}
+ T : H & \longmapsto & \mathcal{R}(T)\\
+ \pi \searrow & & \nearrow \tilde{T} \\
+   & H/\mathcal{N}(T)  & 
+ \end{array}$
+  \end{large}
+\end{center}   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
