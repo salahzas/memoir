@@ -1,0 +1,587 @@
+ \documentclass[a4paper,frenchb,leqno,twoside,12pt]{report}
+  \usepackage{amsmath}
+ \usepackage{amssymb}
+ \usepackage{amsmath, amsthm, amscd, amsfonts, amssymb, graphicx, color}
+ \usepackage[bookmarksnumbered, colorlinks, plainpages]{hyperref}
+ \usepackage{amsmath, amssymb, amsfonts,amsthm,mathrsfs}
+  \usepackage[french]{babel}
+ \usepackage[T1]{fontenc}
+\usepackage[Glenn]{fncychap} 
+ \usepackage[UTF8]{inputenc}
+ \usepackage{graphicx}
+ \usepackage{pstricks}%pour psshadowbox
+ \usepackage{fancyhdr}
+  \usepackage{mathrsfs}
+  \usepackage{verbatim}
+ \usepackage{shapepar}
+ \usepackage[nottoc]{tocbibind}
+\oddsidemargin 0cm%
+ \evensidemargin 0cm%
+ \textwidth 16 cm%
+ \textheight 22 cm %
+ \topmargin  -1cm%
+ \addtocounter{chapter}{0}
+ \pagestyle{fancy}
+ \cfoot{\empty}
+ \renewcommand{\chaptermark}[1]{\markboth{#1}{}} %rappel du titre de chapitre
+ \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}%rappel du titre de la section
+ \lhead[\fancyplain{}{\slshape  \thepage}]
+ {\fancyplain{}{\slshape\rightmark} }
+ \rhead[\fancyplain{}{\slshape \leftmark}]
+ {\fancyplain{}{\slshape \thepage}}
+  %\addtocounter{chapter}{-1}
+	\theoremstyle{plain}
+\newtheorem{thm}{Théorème}[section]
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}{Corollaire}[section]
+\usepackage{comment}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+
+\theoremstyle{remarque}
+\newtheorem*{rem}{Remarque}
+\newtheorem*{note}{Notation}
+\addto\captionsfrench{\def\proofname{Preuve}}
+\usepackage{amsfonts}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+	
+	
+\begin{document}
+\tableofcontents
+\chapter{Introduction}
+\newpage
+\section{Terminologie}
+\vspace{0,25 cm}
+\noindent On d\'esigne par $ H $ un espace de Hilbert complexe et $B(H)$ d\'esigne l'alg\`{e}bre des 
+op\'erateurs lin\'eaires born\'es sur $ H $.
+Soit Un op\'erateur dans $ B(H)$ on noté :\\
+\vspace{0,25 cm}
+\begin{enumerate}
+%\item $ H$ désigné un espace de Hilbert .\\
+%\item $B(H)$ l'ensemble des opérateurs linéaires bornés dans H.\\
+\item[$\bullet $] $R(T )$ L'image de l'opérateur $T$ définie par : $\lbrace y= T x , x\in H \rbrace $ .\\
+\item[$\bullet $] $ N(T )$ Le noyau de l'opérateur $T$ définie par : $\lbrace x \in H , T x = 0\rbrace $.\\
+\item[$\bullet $] $\vert T \vert $\quad Le module de $T$ définie par : $(T^* T )^\frac{1}{2}$  .\\
+\item[$\bullet $] $\sigma(T)$ Le spectre de $T$ définie : $\{ \lambda \in \mathbb{C}$ Tell que : $T-\lambda I$ n'est pas inversible $\}$. \\
+%\item $H_1 \oplus H_2$ la somme directe.\\
+%\item[$\bullet $] idempotent ou projection si $ T^{2}=T $.\\
+%\item[$\bullet $]  projection orthogonale si $T^2= T =T^* $.\\
+%\item[$\bullet $]  positif si :$\langle Tx,x\rangle \geq 0 $ pour tout $x \in H$.\\
+%\item[$\bullet $]  auto-adjoint pour tout $x \in H$ si  $\langle Tx,x\rangle \in \mathbb R$ et $ T = T^* $ .\\
+%\item[$\bullet $]  opérateur normal si  $T T^* = T^*T$.\\
+%\item[$\bullet $]  opérateur quasi normal si $ T(T^{*}T)=(T^{*}T)T. $\\
+%\item[$\bullet $] $\mid T \mid =(T^* T )^\frac{1}{2}$ c'est la valeur absolue de $T$ .\\
+%\item[$\bullet $] isométrie partielle si $\Vert Tx\Vert =\Vert x\Vert $ ;$\forall x \in N(T)^\perp$.\\
+%\item  unitaire équivalent à un opérateur $ S\in B(H) $ alors $\exists U$ unitaire tel que : $T = USU^*$.\\
+%Les notations suivantes seront utilisées au cours de cette thèse .\\
+%\item[$\bullet $] $\mathcal{R}(T ) $ : L'image de $ T. $\\
+%\item[$\bullet $] $\mathcal{R}N(T ) $ : Le noyau de $ T. $\\
+%\item[$\bullet $] $H_1 \oplus H_2$ : la somme directe orthogonale de $ H_{1} $ et $ H_{2} $.\\
+%\item[$\bullet $] $ \tilde{T} $ : Transformation d'Aluthge. \\
+%\item[$\bullet $] $ \tilde{T}_{\lambda} $ et $\Delta_{\lambda} $ : Transformations $ \lambda $-Aluthge.
+\end{enumerate}
+\chapter{Préliminaires}
+\noindent Dans toute la suite, $ H $ désigne un espace de Hilbert complexe et $B(H)$ l'algébre de Banach des opérateurs linéaires bornés sur $ H $.
+\section{Isométrie partielle}
+\begin{defn}
+Un opérateur $U \in B(H)$ est appelé isométrie partielle si  $$\Vert Ux \Vert =\Vert x\Vert , \forall x \in N(U)^\perp $$
+\end{defn}
+\begin{prop}
+Un opérateur $U\in B(H) $  est une isométrie partielle si et seulement si $U^*U  $ est une projection orthogonale.
+\end{prop}
+\begin{proof}
+Supposons que $U$ est une isométrie partielle. On a alors $(U^{*}U)^{*} = U^{*}U$ et $(UU^{*})^{*} = UU^{*}$.\\
+Il reste donc à prouver que $(U^{*}U)^{2} = U^{*}U$ et $(UU^{*})^{2} =UU^{*}$.\\
+Comme $H = N(U)^{\perp}\oplus N(U)$, on a pour tout $x \in H$
+$$U^{*}Ux = U^{*}Ux_{1} \in N(U)^{\perp} ,$$
+où $x_{1} \in N(U)^{\perp}$ vérifiant $x-x_1 \in N(U)$. \\ Il résulte de
+$\Vert Ux_{1}\Vert = \Vert x_{1}\Vert$ que $\langle U^{*}Ux_1, x_1\rangle = \langle x_1, x_1\rangle ,$ par conséquence $U^{*}Ux_1 = x_1$. \\ On a donc $$(U^{*}U)^{2}x = U^{*}Ux.$$
+Montrons la réciproque. Comme $U^{*}U$ est une projection orthogonale, on a : $$\Vert U^{*}Ux\Vert^{2} = \langle U^{*}Ux,x\rangle = \Vert Ux\Vert^{2}.$$ 
+On en déduit alors que $ N(U^{*}U) = N(U)$ et donc $U^{*}U$ est une projection orthogonale sur $N(U)^{\perp}$. D'où, pour tout $x \in N(U)^{\perp}$
+$$\Vert Ux\Vert^{2} = \langle U^{*}Ux,x\rangle = \Vert x\Vert^{2}.$$
+\end{proof}
+\begin{prop}
+$ U\in B(H) $est une isométrie partielle si et seulement si $ U^{*} $ l'est aussi.
+\end{prop}
+\begin{proof}
+Il suffit de montrons que si $U$ est une isométrie partielle alors $UU^{*}$ est une projection orthogonale. En effet, pour tout $x \in H$ on a $ U^{*}x \in \overline{R(U^{*})} = N(U)^{\perp}$. En utilisant la
+Proposition 1.1.1 , on a donc :
+$$(UU^{*})^{2}x = U(U^{*}U)U^{*}x = UU^{*}x .$$
+\end{proof}
+Le corollaire suivant découle immédiatement des deux propositions précédentes. 
+\begin{cor}
+Si $U\in B(H) $ est une isométrie partielle. Alors on a:
+\begin{enumerate}
+\item[(a)] $ R(U) $ fermé.
+\item[(b)] $ UU^{*}U=U $.
+\item[(c)] $ U^{*}UU^{*}=U^{*}. $
+\end{enumerate}
+\end{cor}
+
+\section{Décomposition polaire}
+\begin{thm} (Théorème de décomposition polaire )\\
+Soit $T \in B(H)$ ,il existe  unique isométrie partielle $U \in B(H)$ tel que : $$T = U \vert T \vert \quad et\quad N(U) = N(T ).$$
+\end{thm}
+\begin{proof}
+On sait que :$ \Vert T x \Vert^2 =\Vert \vert T \vert x \Vert^2 ;\forall x \in H$
+Donc on déduire que : $$ N(\vert T\vert) = N(T ) ,$$ et que $$\vert T \vert x =\vert T \vert y \Rightarrow  T x = T y .$$
+On définit alors l’application : \begin{align*}
+V : R(\vert T\vert) &\rightarrow R(T) \\ \vert T\vert x &\mapsto Tx
+\end{align*}
+$V$ est isométrique grâce à $\Vert T x\Vert^2= \Vert \vert T\vert  x\Vert^2 ;\forall x \in H$ .Elle s'entend donc par continuité à une isométrie de $\overline{R(\vert T\vert)}$ vers R(T ), qu'on note encore par $V$ .\\
+En posant $U = V P $ avec $P$ la projection orthogonale sur $N(T )^\perp$, obtient une isométrie partielle sur $H$ vérifiant la propriété énoncée .\\
+Unicité : Si $U_1$;$U_2$ sont deux isométries partielles vérifiant 
+$$U_1 \vert T \vert= U_2 \vert T \vert .$$
+Alors $U_1 = U_2$ sur $\overline{R(\vert T\vert)}$.\\
+De plus comme $\overline{R(\vert T\vert)}^\perp =N(T )$, la condition $N(U_1) = N(U_2) = N(T )$ implique que $ U_1 = U_2$ sur $H$.
+\end{proof}
+\begin{prop}
+Comme conséquence directe de la proposition précédente, on a les identités suivantes :
+\begin{enumerate}
+\item[(1)] $ T = U\vert T\vert = \vert T^{*}\vert U = UT^{*}U. $
+\item[(2)] $ \vert T\vert = U^{*}T = T^{*}U = U^{*} \vert T^{*}\vert U. $
+\item[(3)] $ T^{*} = U^{*}\vert T^{*}\vert = \vert T\vert U^{*} = U^{*}TU^{*}.  $
+\item[(4)] $ \vert T^{*}\vert = U\vert T\vert U^{*} = TU^{*} = UT^{*}.$
+\end{enumerate}
+\end{prop}
+
+\section{L'inverse de more penrose}
+\begin{defn}
+L'inverse de Moore-Penrose de $ A\in B(H) $ est l'op\'erateur $ A^{+}\in B(H)  $ v\'erifiant
+\begin{equation*}
+\left\lbrace\begin{array}{ll}
+ AA^{+}A=A , \\
+ \\
+ A^{+}AA^{+}=A^{+} ,\\
+ \\
+(AA^{+})^{*}=AA^{+},\\
+\\
+(A^{+}A)^{*}A^{+}A.
+\end{array}\right. 
+\end{equation*}
+
+\end{defn}
+\begin{rem}
+\begin{enumerate}
+\item[$\bullet $] $ 0^{+}=0 $ et $ \lambda ^{+}=\frac{1}{\lambda} $, pour  $\lambda\neq 0 $. 
+\item[$\bullet $] Pour tout $ A \in B(H)$, $ (A^{+})^{+}=A $.
+\item[$\bullet $] Si $ A $ est inversible alors $ A^{+}=A^{-1} $.
+\item[$\bullet $] $ AA^{+} $ est une projection orthogonale sur $ R(A) $, de noyau $ N(A^{+}) $,
+\item[$\bullet $] $ A^{+}A $ une projection orthogonale sur $ R(A^{+}) $, de noyau $ N(A) $. 
+\end{enumerate}
+\end{rem}  
+\begin{thm} Soit $ A\in B(H)  $. alors les assertions suivantes sont \'equivalentes:
+\begin{enumerate}
+\item[ \textnormal{(i)}] $ A $ poss\'ede un inverse g\'en\'eralis\'e,
+\item[\textnormal{(ii)}] $ R( A)$ est ferm\'e,
+\item[\textnormal{(iii)}] $ A^{+} $ existe et il est unique.
+\end{enumerate}
+ %Il existe un unique inverse de Moore-Penrose de $ A $ si et seulement si $ R(A) $ est ferm\'e. 
+\end{thm}
+\begin{proof}
+(i) $\Rightarrow$(ii). Supposons que $ B $ est un inverse g\'en\'eralis\'e de $ A $. D'apr\`es (1.1), $ AB $ est un idempotent  sur $ R(A) $. Donc $ R(A) $ est ferm\'e.\\
+(ii) $\Rightarrow $(iii). si $ R(A) $ est ferm\'e, alors d'apr\`es le Th\'eor\`eme 1.1.2, $ R(A^{*})$ est ferm\'e et par cons\'equent $H=R(A^{*})\oplus ^{\perp} N(A)=R(A)\oplus ^{\perp} N(A^{*}) $. Donc $ A $ est sous la forme:\\
+\begin{equation*}
+A=\begin{bmatrix} 
+A_{1} & 0 \\ 
+0 & 0%
+\end{bmatrix}:R(A^{*})\oplus ^{\perp} N(A)\rightarrow R(A)\oplus ^{\perp} N(A^{*}),  
+\end{equation*}
+o\`u $ A_{1} $ est un op\'erateur lin\'eaire born\'e inversible de $R(A^{*})$ dans $R(A)$.\\ 
+Posons
+\begin{equation*}
+ B=\begin{bmatrix} 
+A^{-1}_{1} & 0 \\ 
+0 & 0%
+\end{bmatrix}:R(A)\oplus ^{\perp} N(A^{*})\rightarrow R(A^{*})\oplus ^{\perp} N(A), 
+\end{equation*}
+on a alors:
+\begin{displaymath} 
+\left\lbrace\begin{array}{ll}
+ ABA=A ,\\ 
+ \\
+ BAB=B ,\\
+ AB=(AB)^{*}=\begin{bmatrix} 
+I_{R(A)} & 0 \\ 
+0 & 0%
+\end{bmatrix},\\ 
+\\
+ BA=(BA)^{*}=\begin{bmatrix} 
+I_{R(A^{*})} & 0 \\ 
+0 & 0%
+\end{bmatrix}
+\end{array}\right.  
+\end{displaymath} 
+Donc $ B $ est l'inverse de Moore-Penrose de $ A $.\\
+
+\noindent Pour montrer l'unicit\'e, on suppose qu'il existe $ A^{+}_{1} $, $ A^{+}_{2} $ deux inverses de Moore-Penrose de $ A $. Donc $ AA_{1}^{+} $, $ AA_{2}^{+} $ sont deux projections orthogonales sur $ R(A) $ ce qui implique $AA_{1}^{+}=AA_{2}^{+}$. En multipliant cette Derni\`ere \'equation \`a gauche par $A_{1}^{+} $, et en utilisant la d\'efinition du Moore-Penrose inverse, on obtient $ A_{1}^{+}=A_{1}^{+}AA_{2}^{+}$ . Comme $A^{+}_{1}A $ et $ A^{+}_{2}A $ sont deux projections orthogonales sur $ N(A)^{\perp} $, alors $A^{+}_{1}A=A^{+}_{2}A  $. Donc $  A_{1}^{+}=A_{2}^{+}AA_{2}^{+}=A_{2}^{+}$.   \\
+(iii) $\Rightarrow$ (ii). Evidente.\\
+D'apr\`es la d\'emonstration du Th\'eor\`eme pr\'ec\'edent, on conclut que si l'inverse de Moore-Penrose de $ A\in B(H)  $ existe alors:
+\begin{enumerate}
+\item[$\bullet $]$R(A^{+})=R(A^{+}A)=R(A^{*})$, 
+\item[$\bullet $] $  N(A^{+})=N(AA^{+})=N(A^{*})$,
+\item[$\bullet $] $ H=R(A)\oplus^{\perp} N(A^{+})=R(A^{+})\oplus ^{\perp} N(A).$
+\end{enumerate}
+\end{proof}
+\begin{prop}
+Soit $ A\in \mathfrak{L}(H)$. Si $ R(A) $ est ferm\'e, alors on a:
+\begin{enumerate}
+ \item[\textnormal{(i)}] $(A^{*})^{+}=(A^{+})^{*}$,
+ \item[\textnormal{(ii)}] $ (A^{*}A)^{+}=A^{+}(A^{+})^{*}$,
+ \item[\textnormal{(iii)}] $(AA^{*})^{+}=(A^{+})^{*}A^{+} $,
+ \item[\textnormal{(iv)}] $ A^{*}=A^{+}AA^{*}=A^{*}AA^{+} $,
+ \item[\textnormal{(v)}] $ A^{+}=(A^{*}A)^{+}A^{*}=A^{*}(AA^{*})^{+} $,
+ \item[\textnormal{(vi)}] $ (A^{*})^{+}=A(A^{*}A)^{+}=(AA^{*})^{+}A $.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(i). D'apr\`es la d\'efinition de $ A^{+} $, on obtient:\\
+
+\noindent $(A^{+})^{*}A^{*}(A^{+})^{*}=(A^{+}AA^{+})^{*}=(A^{+})^{*}$,\\
+$ A^{*}(A^{+})^{*}A^{*}=(AA^{+}A)^{*}=A^{*} $,\\
+$ (A^{*}(A^{+})^{*})^{*}=A^{+}A=(A^{+}A)^{*}=A^{*}(A^{+})^{*} $ et \\
+$ ((A^{+})^{*}A^{*})^{*}=AA^{+}=(AA^{+})^{*}=(A^{+})^{*}A^{*} $.\\ 
+Donc $ (A^{+})^{*} $ est le Moore-Penrose inverse de $ A^{*} $.\\
+
+\noindent (ii). Puisque on a :\\
+
+\noindent $ A^{*}AA^{+}(A^{+})^{*}A^{*}A=A^{*}AA^{+}(AA^{+})^{*}A=A^{*}AA^{+}AA^{+}A=A^{*}A $,\\
+ $A^{+}(A^{+})^{*}A^{*}AA^{+}(A^{+})^{*}=A^{+}(AA^{+})^{*}AA^{+}(A^{+})^{*}=A^{+}AA^{+}(A^{+})^{*}=A^{+}(A^{+})^{*} $,\\
+ $(A^{*}AA^{+}(A^{+})^{*})^{*}=A^{+}AA^{+}A=A^{+}A=(A^{+}A)^{*}=(AA^{+}A)^{*}(A^{+})^{*}=A^{*}AA^{+}(A^{+})^{*}  $\\
+ et
+ $(A^{+}(A^{+})^{*}A^{*}A)^{*}=(A^{+}(A)A^{+}A )^{*}=A^{+}A=A^{+}(A^{+})^{*}A^{*}A $,\\
+ 
+\noindent donc $ A^{+}(A^{+})^{*}  $ est le Moore-Penrose inverse de $ A^{*}A $.\\
+ 
+\noindent (iii) Se d\'eduit de $(ii)$, en rempla\c cant $ A $ par $ A^{+}$.\\
+ 
+\noindent (iv). Comme $ A^{+}A $ est une projection sur $ R(A^{*}) $, alors on obtient 
+\begin{center}
+ $A^{*}= A^{+}AA^{*}=(A^{+}A)^{*}A^{*}=A^{*}(AA^{+})^{*}=A^{*}AA^{+}$.
+\end{center}
+ 
+\noindent (v). Il est bien claire que $ A^{+}=A^{+}(A^{+})^{*}A^{*} $. Par l'utilisation de (ii), on obtient la premi\`ere \'egalit\'e de (v). De la m\^{e}me m\'ethode, on peut trouver la deuxi\`eme \'egalit\'e de (v).\\
+
+\noindent (vi) Se d\'eduit de (v).
+\end{proof}
+\begin{thm}
+Soient  $A,B \in B(H)$ deux opérateurs  à image fermée .\\
+Supposions que $R(AB)$ est fermée, alors les propriété suivantes sont équivaillent :
+\begin{enumerate}
+\item[1]$(AB)^{+}=B^{+}A^{+}$.
+\item[2] $R(A^{*}AB)\subset R(B)$ \quad et \quad $R(BB^{*}A^{*})\subset R(A^{*})$ .
+\end{enumerate}
+\end{thm}
+
+\begin{prop}
+Soit $T\in \mathcal{B}(H)$ ,alors les assertions suivants sont equivalent:
+\begin{enumerate}
+\item[\textit{\textbf{(i)}}] $\mathcal{R}(T)$ fermé
+\item[\textit{\textbf{(ii)}}] $\mathcal{R}(T^*)$ fermé
+\item[\textit{\textbf{(iii)}}]$T_0:=T|_{\mathcal{N}(T)^{\perp}}$ admet un inverse borné
+\item[\textit{\textbf{(iv)}}] $T^+$ est borné
+\item[\textit{\textbf{(v)}}] $\mathcal{R}(T^*T)$ fermé
+\item[\textit{\textbf{(v)}}] $\mathcal{R}(TT^*)$ fermé
+\end{enumerate}
+\end{prop}
+\newpage
+\section{L'espace quotient normé}
+Soit $E$ un ensemble et soit $F$ un sous-ensemble de $E$. On définit la relation suivant entre les éléments de E
+\begin{center}
+$x$ $\mathcal{R}$ $y$ $\Longleftrightarrow x-y\in F$.
+\end{center}
+Cette relation est un relation d'équivalence:
+\begin{enumerate}
+\item[$\bullet$] elle est réflexive : $x$ $\mathcal{R}$ $x$ puisque $0 \in F$.
+\item[$\bullet$] elle est symétrique : $x$ $\mathcal{R}$ $y$ $\Longrightarrow$ $y$ $\mathcal{R}$ $x$.
+\item[$\bullet$] elle est transitive : $x$ $\mathcal{R}$ $y$ et $y$ $\mathcal{R}$ $z$ $\Longrightarrow$ $x$ $\mathcal{R}$ $z$.
+\end{enumerate}
+L'ensemble $\{y$ $\in$ $E$; $x$ $\mathcal{R}$ $y \}$ est appelé classe d'équivalence de $x$ noté par :
+\begin{center}
+ $\bar{x}=x+F=\{x+f, f\in F\}$.
+\end{center}
+On noté par $E/F$ l'ensemble des classe d'équivalence lié à la relation d'equivalence $\mathcal{R}$ on appelle cette ensemble L'ensemble quotient E sur F.\\
+On peut munir $E/F$ d’une structure vectorielle. Ainsi, la somme de deux
+classes est définie de la manière suivante :
+\begin{center}
+$\bar{x} + \bar{y} = \overline{x+y} = x+y+F.$
+\end{center}
+De  même, le produit par un scalaire $\lambda \in \mathbb{K}$ peut être défini de la manière suivante :
+\begin{center}
+$\lambda \bar{x} = \overline{\lambda x} = \lambda x + F.$
+\end{center}
+
+\subsection{Espace quotient normé}
+
+L'espace quotient ($E/F$,+,$\times$) muni de ces deux lois  de composition est un espace vectoriel sur le corps $\mathbb{K}$.\\
+On suppose désormais que $E$ est un espace normé et que $F$ est un sous-
+espace fermé de $E$.\\
+On peut définir une norme sur cette espace et on pose
+pour cela : 
+\begin{center}
+$||\bar{x}||= d(x,F) = \underset {f \in F}{\inf} ||x-f||$
+\end{center}
+Donc l'espace ($E/F$,||.||) est un espace quotient normé.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\chapter{Le Module Minimum reduit d'un opérateur}
+\section{Préliminaires}
+Dans ce chapitre $X$, $Y$ deux espaces de Banach sur le même corps $ \mathbb{K} $ et $ H $ un espace de Hilbert. On désigne par $\mathcal{B}(X,Y)$ l'algèbre des opérateurs bornés de $Y $ dans $Y$ . Pour $T \in \mathcal{B}(X,Y)$
+on note $\mathcal{N}(T)$ le noyau de $T$ et $\mathcal{R}(T)$ l'image de $T$.
+\section{Défnition et propriétés}
+
+\begin{defn}
+	Soit $T\in \mathcal{B}(X,Y)$. Le module minimum réduit de $T$, noté par $\gamma(T)$ est défini par:\\
+	\begin{displaymath}
+	\gamma(T):=\left\lbrace\begin{array}{lc}
+	\inf\{||Tx||\quad : d(x,\mathcal{N}(T))=1\}& si\quad T\neq 0\\
+	\infty& si\quad T=0
+	\end{array}\right. 
+	\end{displaymath}
+\end{defn}
+\begin{prop}
+	Soit $T\in \mathcal{B}(X,Y)$ alors on a  :\\
+\begin{align*}
+\gamma(T)&= \inf\left\lbrace \quad \frac{||Tx||}{d(x,\mathcal{N}(T))} :\quad x\notin\mathcal{N}(T) \quad \right\rbrace\\
+\\
+\end{align*}
+\end{prop}
+\begin{proof}
+Soit $T\in \mathcal{B}(X,Y)$. Posons   :
+%$\gamma(T) = \inf\{||Tx||\quad : d(x,\mathcal{N}(T))=1\}$ \\
+\begin{center}
+$M_1 = \inf\left\lbrace \quad \frac{||Tx||}{d(x,\mathcal{N}(T))} :\quad x\notin\mathcal{N}(T) \quad \right\rbrace .$
+\end{center}
+Montrons que $\quad  M_1 \geq \gamma(T) $.\\
+On a
+\begin{center}
+$ \{ ||Tx|| : d(x,\mathcal{N}(T))=1 \} \subset \left\lbrace \frac{||Tx||}{d(x,\mathcal{N}(T))} \quad x\notin\mathcal{N}(T) \right\rbrace.  $
+\end{center}
+ Donc on obtient :
+ \begin{center}
+  $\inf \left\lbrace \frac{||Tx||}{d(x,\mathcal{N}(T))}\quad x\notin\mathcal{N}(T) \right\rbrace \geqslant \inf\{ ||Tx|| : d(x,\mathcal{N}(T))=1 \} $
+ \end{center}
+Alors:\\
+$M_1 \geq \gamma(T)$\\
+\\
+Réciproquement. Pour tout $\quad x \notin N(T) \quad$ alors $ ||\overline{x}|| \neq 0$.\\
+Posons $\quad y=\frac{x}{||\overline{x}||} $. Ceci implique que 
+\begin{center}
+$  \Vert \overline{y} \Vert = d(y,\mathcal{N}(T))= 1.  $
+\end{center}
+$ On\quad a\quad alors :$ 
+\begin{align*}
+\\
+\gamma(T) &\leq ||Ty||=\frac{||Tx||}{d(x,\mathcal{N}(T))}\\
+\gamma(T) &\leq \inf_{x\notin\mathcal{N}(T)} \frac{||Tx||}{d(x,\mathcal{N}(T))}\\
+\gamma(T) &\leq M_1\\
+\end{align*}
+\\
+Par conséquent $\gamma(T) = M_1$.
+\end{proof}
+\begin{prop}
+Soit $T\in \mathcal{B}(H)$ si $T\neq0$ alors:\\
+\begin{displaymath}
+\gamma(T)=\inf\{||Tx||:x\in (\mathcal{N}(T))^{\perp},||x||=1\}
+\end{displaymath}
+\end{prop}
+\begin{proof}
+On a \begin{displaymath}
+\gamma(T) = \inf\{||Tx||\quad : d(x,\mathcal{N}(T))=1\}\\
+\end{displaymath}
+Donc
+\begin{align*}
+ d(x,\mathcal{N}(T))=1\Longrightarrow x\notin \mathcal{N}(T)\\
+ \end{align*}
+pour $x \in H$ tell que $d(x,\mathcal{N}(T)=1$, on trouve que $x \notin \mathcal{N}(T)$, donc $x\in\mathcal{N}(T)^{\perp}$.
+\\Soit $y\in\mathcal{N}(T)$,posons $z=x-y$ tell que $x\in \mathcal{N}(T)^{\perp}$et $y\in \mathcal{N}(T)$\\.
+Donc d'après le théorème de Pythagore $||z||^2=||x||^2+||y||^2$
+\\
+Ceci implique que\\
+\\ $||x||^2\leq||z||^2=||x-y||^2$\\
+\\
+Donc $||x||\leq||x-y||\Longleftrightarrow ||x||\leq \underset{y\in\mathcal{N}(T)}{\inf} ||x-y||=1 \Longleftrightarrow||x||\leq 1$\\
+\\D'autre part on a:\\
+\\
+$d(x,\mathcal{N}(T))=1$ alors $\underset{y\in\mathcal{N}(T)}{\inf} ||x-y||=1$ donc $||x-y||\geq1$
+Il suffit de prendre $y=0$ On trouve $||x||\geq1$\\
+\\Par conséquent \quad $||x||=1$.
+\\
+\\
+Inversement :
+\\
+\\
+Comme $x\in\mathcal{N}(T)^{\perp}$, alors $d(x,\mathcal{N}(T)) \neq 0 $  et comme $x {\perp} y$, alors : 
+\\
+\begin{displaymath}
+||x-y||^2=||x||+||y||^2\geq 1 +  ||y||^2 \geq 1  donc ||x-y||\geq 1
+\end{displaymath}
+\\
+Alors $\quad$ $\underset{y\in\mathcal{N}(T)}{\inf} ||x-y||\geq 1$ et alors $d(x,\mathcal{N}(T)) \geq 1$.
+D'où $d(x,\mathcal{N}(T)) = 1 $
+\\
+\\
+Donc $\gamma(T)=\inf\{||Tx||:x\in (\mathcal{N}(T))^{\perp},||x||=1\}$
+\end{proof}
+\begin{thm}
+Soit T $\in \mathcal{B}(X,Y)$ alors on a : \\
+\begin{displaymath}
+\gamma(T) > 0 \Longleftrightarrow \mathcal{R}(T) \text{fermé} 
+\end{displaymath}
+ \end{thm}
+\begin{proof}
+ Montrons que : $\gamma(T) > 0$ seulement si $\mathcal{R}(T)$ fermé. \\
+\\
+Si $T=0$ alors $\gamma(T)=\infty > 0$ et$\quad\mathcal{R}(T)$ fermé.\\
+Supposons que $T \neq$ 0\\
+Soit $\overline{T}$ l'injection borné correspondant à $T$ définie par\\
+\begin{displaymath}
+\begin{array}{ccc}
+\overline{T}:X/\mathcal{N}(T)&\longrightarrow & Y \\
+\overline{x}&\longmapsto &\overline{T}\overline{x}=Tx \\
+\end{array}
+\end{displaymath}
+Donc $\overline{T}(\overline{X})=T(X)$ mais on sait que $\overline{T}(\overline{X})=T(X)$ est fermé si seulement si $\overline{T}$ admet un inverse borné alors $\exists C>0$ Tell que $||\overline{T}\overline{x}|| = C||\overline{x}|| \quad \forall x \in X$\\
+Et comme :\\
+\begin{align*}
+\gamma(T) = \inf_{\overline{x}\neq \overline{0}}\frac{||\overline{T}\overline{x}||}{||\overline{x}||} &\geq C > 0
+\end{align*}
+Alors $\mathcal{R}(T)$ est fermé si seulement si $\gamma(T) > 0$\\
+\\
+\end{proof}
+\begin{prop}
+Soit $T\in \mathcal{L}(H)$ ,si $T$inversible alors :
+\begin{displaymath}
+\gamma(T)=\frac{1}{||T^{-1}||}
+\end{displaymath}
+\begin{proof}
+Posons T est inversible alors on a:\\
+$d(x,\mathcal{N}(T))=d(x,\{0\})=||x||$ et Tx=y\\donc\\
+\begin{align*}
+\gamma(T)&=\inf_{x\neq 0}\frac{||Tx||}{||x||}\\
+&=\frac{1}{\sup_{x\neq 0}\frac{||x||}{||Tx||}}\\
+&=\frac{1}{\sup_{y\neq 0}\frac{||T^{-1}y||}{||y||}}\\
+&=\frac{1}{||T^{-1}||}
+\end{align*}
+\end{proof}
+\end{prop}
+\begin{prop}
+Soit $T\in \mathcal{B}(H)$ ,si $\mathcal{R}(T)$fermé alors :
+\begin{displaymath}
+\gamma(T)=\frac{1}{||T^{+}||}
+\end{displaymath}
+\end{prop}
+\begin{proof}
+Comme $\mathcal{R}(T)$ fermé alors $T^+$ existe est unique donc:
+\begin{align*}
+||T^+||&=\sup\left\lbrace\frac{||T^{+}y||}{||y||} tq :y\in \mathcal{R}(T) \quad\text{et} y\neq 0\right\rbrace\\
+&=\sup\left\lbrace\frac{||x||}{||Tx||} tq :x\in \mathcal{N}(T)^{\perp} \quad\text{et} x\neq 0\right\rbrace\\
+&=\left(\inf\left\lbrace\frac{||Tx||}{||x||} tq :x\in \mathcal{N}(T)^{\perp} \quad\text{et} x\neq 0\right\rbrace\right)^{-1}\\
+&=\frac{1}{\gamma(T)}
+\end{align*}
+\end{proof}
+\begin{prop}
+Soit $T\in \mathcal{B}(H)$alors:
+\begin{displaymath}
+\gamma(T)^2=\gamma(T^*T)
+\end{displaymath}
+\end{prop}
+\begin{proof}
+Soit $T\in \mathcal{B}(H)$alors:
+\begin{itemize}
+\item[•]Si $\gamma(T)=0$ alors $\mathcal{R}(T)$ n'est pas fermé ceci implique que $\mathcal{R}(T^*T)$n'est pas fermé donc $\gamma(T^*T)=0$
+\item[•]Si $\gamma(T)>0$ alors $\mathcal{R}(T)$ et $\mathcal{R}(T^*T)$sont fermé ceci implique que $T^+$ et $(T^*T)^+$ existe est borné donc:
+\begin{displaymath}
+\gamma(T^*T)=\frac{1}{||(T^*T)^+||}=\frac{1}{||T^{+}(T^{+})^{*}||}=\frac{1}{||T^+||^2}=\gamma(T)^2
+\end{displaymath}
+\end{itemize}
+\end{proof}
+\begin{prop}
+Soit $T$ un opérateur positif alors on a:
+\begin{itemize}
+\item[•] $T^+$ est positive
+\item[•] $\sigma(T)\textbackslash\{0\}=\sigma(T_0 )\textbackslash\{0\}$
+\item[•]$\sigma(T^+)\textbackslash\{0\}=\sigma(T_0^{-1} )\textbackslash\{0\}$
+\item[•] Soit $\lambda\in ]0,\infty[$ alors $\lambda\in \sigma(T)\Leftrightarrow\frac{1}{\lambda}\in \sigma(T^+)$
+\item[•]Si $T^{-1}$ existe alors $0\neq \lambda\in \sigma(T)\Leftrightarrow\frac{1}{\lambda}\in\sigma(T^{-1})$
+\end{itemize}
+\end{prop}
+\begin{prop}
+Soit $T$ un opérateur positif, alors $T$ est borné si et seulement si $\sigma(T)$ est borné.
+
+\end{prop}
+\begin{thm}
+Soit $T\in \mathcal{B}(H)$un opérateur positif est soit :
+\begin{displaymath}
+d(T)=\inf\{|\lambda|:\lambda\in \sigma(T)\textbackslash\{0\}\}=d(0,\sigma(T)\textbackslash\{0\})
+\end{displaymath}
+Alors $\gamma(T)=d(T)$
+\end{thm}
+\begin{proof}
+\begin{itemize}
+\item[\textbf{Cas 1:}] $\gamma(T)>0$ alors $\mathcal{R}(T)$ est fermé est dans ce cas $T_0^{-1}$ et $T^+$ sont borné est autoadjoint avec $||T_0^{-1}||=||T^+||=\frac{1}{\gamma(T)}$
+Par conséquence:
+\begin{align*}
+\gamma(T)=\frac{1}{||T^+||}&=\frac{1}{\sup\{|\lambda|:\lambda\in\sigma(T^+)\}}\\
+&=\frac{1}{\sup\{|\lambda|:\lambda\in\sigma(T_0^{-1})\}}\\
+&=\frac{1}{\sup\{\frac{1}{|\lambda|}:\lambda\in\sigma(T_0)\}}\\
+&=\inf\{|\lambda|:0\neq \lambda\in \sigma(T_0)\}\\
+&=d(T)
+\end{align*}
+\item[\textbf{Cas 2:}] comme $T$ est un opérateur positif alors $T^+$ est aussi positif donc:
+\begin{align*}
+\gamma(T)=0 &\Longrightarrow T^+ \text{est non borné}\\
+&\Longrightarrow\sigma(T^+) \text{est non borné}\\
+&\Longrightarrow \forall n \in \mathbb{N}\quad \exists\lambda_n\in \sigma(T^+)\quad \text{tq} \quad\lambda_n \geq n
+\end{align*}
+Donc $\frac{1}{\lambda_n}\in \sigma(T) \quad\text{et}\quad \frac{1}{\lambda_n}\longrightarrow 0 \quad\text{si}\quad n \longrightarrow \infty$ par conséquence $d(T)=0$
+\end{itemize}
+\end{proof}
+\begin{prop}
+Soit $T\in \mathcal{L}(H)$ un opérateur autoadjoint et soit:\begin{displaymath}
+d(T)=\inf\{|\lambda|:\lambda\in \sigma(T)\textbackslash\{0\}\}=d(0,\sigma(T)\textbackslash\{0\})
+\end{displaymath}
+Alors $\gamma(T)=d(T)$
+\end{prop}
+\begin{proof}
+Comme $T$ est autoadjoint alors $T^*T=T^2$ est positif par conséquence\\ $\gamma(T^2)=d(T^2)$
+mais on a $\gamma(T^2)=\gamma(T^*T)=\gamma(T)^2$ aussi $d(T)^2=d(T^2)$ donc \\$\gamma(T)^2=d(T)^2$ ceci implique que $\gamma(T)=d(T)$
+\end{proof}
+\begin{defn}
+Soit $T\in\mathcal{L}(H)$alors:\\
+\begin{displaymath}
+\gamma(T)=\inf\{\lambda:\lambda\in\sigma(|T|)\textbackslash\{0\}\}
+\end{displaymath}
+telle que $|T|$ est le racine carré de $T^*T$.
+\end{defn}
+\begin{proof}
+$|T|$\quad est un opérateur borné autoadjoint est positif donc $\gamma(|T|)=d(|T|)$ donc il suffit de montre que 
+$\gamma(T)=d(|T|)$ \\
+On a:
+\begin{align*}
+\gamma(|T|)^2&=d(|T|)^2=d(T^*T)=\gamma(T)^2\\
+\text{donc}:\gamma(T)&=d(|T|)=\inf\{\lambda:\lambda\in\sigma(|T|)\textbackslash\{0\}\}
+\end{align*}
+\end{proof}
+\begin{prop}
+Soit $T\in\mathcal{L}(H)$alors:\\
+\begin{displaymath}
+\gamma(T)=\gamma(T^*)
+\end{displaymath}
+\end{prop}
+\begin{proof}
+On a:
+\begin{align*}
+\gamma(T)&=\inf\{\lambda:\lambda\in\sigma((T^*T)^{\frac{1}{2}})\textbackslash\{0\}\}\\
+&=\inf\{\lambda:\lambda\in\sigma((TT^*)^{\frac{1}{2}})\textbackslash\{0\}\}\\
+&=\gamma(T^*)
+\end{align*}
+\end{proof}
+\end{document}
