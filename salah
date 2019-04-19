@@ -535,14 +535,14 @@ $x=x_1 + x_2 $ d'où $x_1 \in \mathcal{N}(T)^{\perp} \quad \text{et} \quad x_2 \
 \end{center} 
 Alors:
 \begin{align*}
-||T^+||&=\sup\left\lbrace\frac{||T^{+}Tx_1||}{||Tx_1||} tq :x_1\in \mathcal{N}(T)^{\perp} \quad\text{et} \quad x_1\neq 0\right\rbrace \\
+||T^+||&=\sup\left\lbrace\frac{||T^{+}Tx_1||}{||Tx||} tq :x_1\in \mathcal{N}(T)^{\perp} \quad\text{et} \quad x\neq 0\right\rbrace \\
 \end{align*}
 \begin{flushleft}
 Mais on sait que  $T^{+}T$ est un projection sur $\mathcal{R}(T^*)=\mathcal{N}(T)^{\perp}$ donc $T^{+}Tx_1=x_1$\\
 Alors:
 \end{flushleft}
 \begin{align*}
-||T^+||&=\sup\left\lbrace\frac{||x_1||}{||Tx_1||} \quad tq :x_1\in \mathcal{N}(T)^{\perp} \quad\text{et} \quad x_1\neq 0\right\rbrace\\
+||T^+||&=\sup\left\lbrace\frac{||x_1||}{||Tx||} \quad tq :x_1\in \mathcal{N}(T)^{\perp} \quad\text{et} \quad x\neq 0\right\rbrace\\
 &=\left(\inf\left\lbrace\frac{||Tx||}{||x||} tq :x\in \mathcal{N}(T)^{\perp} \quad\text{et}\quad x\neq 0\right\rbrace\right)^{-1}\\
 &=\frac{1}{\gamma(T)}
 \end{align*}
